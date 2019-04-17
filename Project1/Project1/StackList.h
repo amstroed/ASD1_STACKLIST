@@ -26,7 +26,7 @@ namespace asd1 {
 		Node* topNode;
 
 	public:
-
+		
 		// A compléter sans ajouter d'attributs privés et sans utiliser le type T
 		// autrement que via les types value_type, reference et const_reference
 		//
@@ -37,7 +37,17 @@ namespace asd1 {
 		//
 		// Cette classe doit offrir garanties faible et forte pour toutes ses
 		// fonctionalités
-
-	}
+		StackList(const StackList& stack)
+		{
+			this = stack;
+		}
+		void pop()
+		{
+			Node* oldTopNode = this->topNode;
+			this->topNode = topNode.nxt;
+			delete oldTopNode;
+		}
+	};
+}
 
 #endif /* StackList_h */
